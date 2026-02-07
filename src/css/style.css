@@ -1,0 +1,24 @@
+:root {
+    /* colors */
+    --primary-color: #f5c518ff;
+    --secondary-color: #d72638ff;
+    --tertiary-color: #2f2f2fff;
+    --light-grey: #f5f3eeff;
+    --dark-grey: #1e1e1eff;
+
+    /* Fonts */
+    --font-heading: "Bebas Neue", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-serif: "Playfair Display", serif;
+
+    /* sizes */
+    --font-base: 18px;
+    --small-font: 0.8em;
+    --large-font: 1.2em;
+}
+
+body {
+    background-color: var(--carbon-black);
+    color: var(--parchment);
+    font-family: var(--font-body);
+}
