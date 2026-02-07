@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700&family=Playfair+Display:ital@0;1&display=swap');
+
 :root {
     /* colors */
     --primary-color: #f5c518ff;
@@ -5,6 +7,12 @@
     --tertiary-color: #2f2f2fff;
     --light-grey: #f5f3eeff;
     --dark-grey: #1e1e1eff;
+
+    /* --primary-color: var(--bright-amber);
+    --secondary-color: var(--classic-crimson);
+    --bg-color: var(--carbon-black);
+    --card-bg: var(--graphite);
+    --text-color: var(--parchment); */
 
     /* Fonts */
     --font-heading: "Bebas Neue", sans-serif;
@@ -18,7 +26,77 @@
 }
 
 body {
-    background-color: var(--carbon-black);
-    color: var(--parchment);
+    margin: 0;
     font-family: var(--font-body);
+    background-color: var(--tertiary-color);
+    color: var(--light-grey);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.serif-text {
+    font-family: var(--font-serif);
+}
+
+/*Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.movie-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--tertiary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.logo a {
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--light-grey);
+}
+
+.logo-w {
+    color: var(--primary-color);
+}
+
+.logo-2 {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    vertical-align: super;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.navbar a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
 }
