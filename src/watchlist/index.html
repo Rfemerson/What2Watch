@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What2Watch | Movie Details</title>
+    <title>What2Watch | My Watchlist</title>
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/movie.js" type="module"></script>
+    <script src="/js/watchlist.js" type="module"></script>
 </head>
 
 <body>
     <header class="divider" id="main-header"></header>
 
-    <main class="divider movie-detail-container">
-        <p class="loading-msg">Loading movie details...</p>
+    <main class="divider">
+        <section class="watchlist">
+            <h1>My Watchlist</h1>
+            <ul class="movie-list" id="saved-movies"></ul>
+        </section>
     </main>
 
     <footer id="main-footer"></footer>
