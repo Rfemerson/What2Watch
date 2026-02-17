@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What2Watch | Discover your next movie</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="public/images/favicon.png">
     <script src="/js/main.js" type="module"></script>
 </head>
 
@@ -20,7 +21,13 @@
 
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Search movies...">
-                <button id="searchButton">Search</button>
+                <button id="searchButton" aria-label="Buscar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>   
             </div>
         </section>
 

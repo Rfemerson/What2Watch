@@ -1,4 +1,4 @@
-import { renderListWithTemplate, getLocalStorage, setLocalStorage} from "./utils.mjs";
+import { renderListWithTemplate, getLocalStorage, setLocalStorage, alertMessage} from "./utils.mjs";
 
 export default class MovieDetails {
   constructor(movieId, dataSource) {
@@ -61,11 +61,11 @@ export default class MovieDetails {
       
       setLocalStorage("w2w-watchlist", favorites);
       
-      alert(`${this.movie.title} added to your watchlist!`);
+      alertMessage(`"${this.movie.title}" added to your watchlist.`)
       document.querySelector("#addToWatchlist").innerText = "✔ Added";
       document.querySelector("#addToWatchlist").disabled = true;
     } else {
-      alert("This movie is already in your list.");
+      alertMessage("This movie is already in your watchlist.");
     }
   }
 }

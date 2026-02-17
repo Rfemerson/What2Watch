@@ -101,6 +101,68 @@ header {
     color: var(--primary-color);
 }
 
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    margin: 20px auto 40px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 50px 12px 20px;
+    font-size: 1rem;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 2px solid transparent;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--dark-grey);
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.search-bar button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.search-bar button svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--primary-color);
+    stroke-width: 3px;
+}
+
+.search-bar button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.search-bar button:active {
+    transform: scale(0.95);
+}
+
 /* Details page */
 .movie-detail-container {
     max-width: 1000px;
@@ -133,10 +195,49 @@ header {
     color: var(--primary-color);
 }
 
+#addToWatchlist {
+    background-color: var(--primary-color);
+    color: var(--dark-grey);
+    border: none;
+    padding: 15px 30px;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#addToWatchlist:hover {
+    background-color: #ffd700;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px var(--primary-color);
+}
+
+#addToWatchlist:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px var(--tertiary-color);
+}
+
+#addToWatchlist:disabled {
+    background-color: var(--tertiary-color);
+    color: #888;
+    border: 1px solid #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    /* Proporção 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 10px;
@@ -151,12 +252,25 @@ header {
     height: 100%;
 }
 
+/* My list Page*/
 .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     list-style: none;
     padding: 0;
+}
+
+#saved-movies {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    justify-content: center;
+}
+
+#saved-movies .movie-card {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 .movie-card {
@@ -213,6 +327,51 @@ header {
 }
 
 .remove-btn:hover {
-    background-color: darkred;
+    background-color: var(--secondary-color);
     transform: scale(1.1);
+}
+
+/* Alert Notification */
+.alert {
+    background-color: var(--primary-color);
+    color: var(--dark-grey);
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.5s ease-out forwards;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.alert p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.alert span {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 10px;
+}
+
+.alert span:hover {
+    color: var(--secondary-color);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
